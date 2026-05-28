@@ -98,9 +98,9 @@ Analysen dokumenterer ein klar samanheng mellom vêr og straumforbruk for hushal
 
 For vidare arbeid bør ein prioritere:
 
-1. skalering til fleire hushald for betre robustheit,
-2. modellar med eksogene variablar (ARIMAX/SARIMAX),
-3. eksplisitt døgnsesong i prognoseleddet,
-4. samanlikning mot maskinlæringsmetodar for lengre horisont.
+1. Skalering til fleire hushald for betre robustheit
+2. Modellar med eksogene variablar (ARIMAX/SARIMAX)
+3. Eksplisitt døgnsesong i prognoseleddet
+4. Samanlikning mot maskinlæringsmetodar for lengre horisont
 
 Samla sett gir løysinga ei god, teknisk etterprøvbar plattform for vidare utvikling av datadreven energiprognosering.
