@@ -1,4 +1,4 @@
-# Enkel rapport: straumbruk og vêr i London
+# Analyse av straumforbruk og vêrdata i London
 
 ## 1. Introduksjon
 
