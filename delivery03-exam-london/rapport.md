@@ -26,7 +26,7 @@ Bruksområdet er korttidsprognosering av straumforbruk for ein privat bustad. De
 
 ### Datasett
 
-Tre datakjelder er fletta saman:
+Tre datakjelder er slått saman:
 
 - **Energi (halvtimesdata):** `MAC000002_energy_halfhourly.csv` (okt 2012-feb 2014)
 - **Vêr (timeoppløysing):** `London_weather_hourly.csv` (temperatur, vind, luftfukt, trykk)
@@ -41,11 +41,11 @@ Halvtimes energidata er aggregerte til timesnivå, deretter left-joined med vêr
 Analysen etablerer eit samansett timesdatasett med energi + vêr, og utleiar fleire forklarande variablar:
 
 - Kalenderfeature: time, vekedag, månad, helg, sesong
-- Temperatur-laggar: 1t, 24t, 48t
+- Temperatur-lags: 1t, 24t, 48t
 - Glidande snitt av forbruk: 24t, 48t, 168t
-- Laggar av forbruk: 24t og 168t
+- Lags av forbruk: 24t og 168t
 
-Dette gir eit godt grunnlag for både forklarande analyse og prognosering.
+Dette gir eit godt grunnlag for både forklarande analyse og prognose.
 
 ### Utforskande funn (EDA)
 
@@ -66,7 +66,7 @@ Tidsmønster i forbruket:
 ### Tidsserieanalyse
 
 - ADF-testen for rå timeserie indikerer stasjonaritet (p-verdi < 0,05)
-- 1.-ordens differensiering og sesongdifferensiering (lag 24) er likevel brukte for å stabilisere dynamikk og inspeksjon av ACF/PACF
+- Førsteordens differensiering og sesongdifferensiering (lag 24) er likevel brukte for å stabilisere dynamikk og inspeksjon av ACF/PACF
 - Additiv dekomponering (periode 24) på eit januarutval viser klart døgnsesongmønster, trendkomponent og residual
 
 ### Prognosemodellar
@@ -87,11 +87,11 @@ Resultata er konsistente med kjent energiåtferd i bustader: temperatur er den v
 Samtidig har analysen fleire metodiske avgrensingar:
 
 - **Eitt hushald:** avgrensa generaliserbarheit til heile populasjonen
-- **Daglege vêrfelt broadcasta til timar:** reduserer realismen i intradag-effektar for sol og nedbør
-- **Univariat modellering:** prognosemodellane nyttar i praksis berre historisk forbruk; eksogene variablar (t.d. temperatur) er ikkje direkte inkluderte i sjølve modellsteget
+- **Daglege vêrfelt overførte til timesoppløysing:** reduserer realismen i døgnvariasjonane for sol og nedbør
+- **Univariat modellering:** prognosemodellane nyttar i praksis berre historisk forbruk; eksterne variablar (t.d. temperatur) er ikkje direkte inkluderte i sjølve modellsteget
 - **Ingen eksplisitt sesongmodell (SARIMA):** døgnsesong er observert, men ikkje modellert med sesongledd i prognosen
 
-Desse punkta betyr at funna er solide som teknisk demonstrasjon, men at prediksjonskrafta sannsynlegvis kan aukast med sesong- og eksogene modellutvidingar.
+Desse punkta tyder på at funna er solide som teknisk demonstrasjon, men at modellen truleg kan bli meir presis med sesonglege og eksterne variablar.
 
 ## 4. Konklusjon
 
