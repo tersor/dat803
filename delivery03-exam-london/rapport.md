@@ -1,6 +1,7 @@
 # Teknisk rapport: Analyse av straumforbruk og vêrdata i London
 
 Av Terje Sørbø og Ørjan Tornvik
+Gruppenavn: Terje og Ørjan si gruppe
 
 ## 1. Introduksjon
 
